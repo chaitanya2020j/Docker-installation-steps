@@ -1,0 +1,6 @@
+curl https://releases.rancher.com/install-docker/18.09.sh | sh
+docker --version
+sudo usermod -aG docker ubuntu
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo systemctl status docker
+sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:stable
